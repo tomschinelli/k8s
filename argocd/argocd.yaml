@@ -18,7 +18,9 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: http
+                  number: 8080
+#                  name: http
+
       host: argocd.schinel.li
 #  tls:
 #    - hosts:
