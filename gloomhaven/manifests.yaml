@@ -80,7 +80,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: gloomhaven-backend
+  name: gloomhaven-backend-tls
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
