@@ -1,15 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gloomhaven
+  name: argocd
   namespace: argocd
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: gloomhaven
+    path: argocd
     repoURL: https://github.com/tomschinelli/k8s
-  syncPolicy:
-    automated: {}

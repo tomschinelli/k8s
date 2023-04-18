@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gloomhaven-backend
-  namespace: default
+  name: gloomhaven
+  namespace: argocd
 spec:
   destination:
     namespace: default
@@ -11,3 +11,5 @@ spec:
   source:
     path: gloomhaven
     repoURL: https://github.com/tomschinelli/k8s
+  syncPolicy:
+    automated: {}
