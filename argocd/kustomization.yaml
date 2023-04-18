@@ -13,4 +13,3 @@ patches:
 resources:
   - namespace.yaml
   - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.6.5
-  - argocd.yaml
