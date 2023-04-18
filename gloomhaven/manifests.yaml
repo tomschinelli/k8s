@@ -54,7 +54,7 @@ spec:
     app: gloomhaven-backend
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
   type: LoadBalancer
 
@@ -76,4 +76,4 @@ spec:
               service:
                 name: gloomhaven-backend
                 port:
-                  number: 80
+                  number: 8080
