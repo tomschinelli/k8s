@@ -4,9 +4,9 @@ kind: Ingress
 metadata:
   name: argocd
   namespace: argocd
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod-cloudflare-dns"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+#  annotations:
+#    cert-manager.io/cluster-issuer: "letsencrypt-prod-cloudflare-dns"
+#    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: nginx
   rules:
@@ -18,9 +18,9 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: https
+                  name: http
       host: argocd.schinel.li
-  tls:
-    - hosts:
-        - "argocd.schinel.li"
-      secretName: argocd-tls
+#  tls:
+#    - hosts:
+#        - "argocd.schinel.li"
+#      secretName: argocd-tls
