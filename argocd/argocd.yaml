@@ -19,9 +19,8 @@ spec:
                 name: argocd-server
                 port:
                   name: https
-
       host: argocd.schinel.li
-#  tls:
-#    - hosts:
-#        - "argocd.schinel.li"
-#      secretName: argocd-tls
+  tls:
+    - hosts:
+        - "argocd.schinel.li"
+      secretName: argocd-tls
