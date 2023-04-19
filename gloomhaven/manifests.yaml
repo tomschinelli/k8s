@@ -102,4 +102,4 @@ spec:
   tls:
     - hosts:
         - gloomhaven.tomschinelli.io
-      secretName: cuteapp-prod-tls
+      secretName: gloomhaven-prod-tls
