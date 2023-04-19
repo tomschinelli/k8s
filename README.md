@@ -8,5 +8,6 @@ minikube apply -k .
 
 ## Initialize Cluster
 ```shell
+kubectl apply -k argocd
 kubectl apply -k .
 ```
