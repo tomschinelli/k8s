@@ -76,55 +76,30 @@ spec:
 #                port:
 #                  number: 8080
 
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gloomhaven-backend
-  namespace: default
+  labels:
+    name: gloomhaven-backend
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod-cloudflare-dns"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: nginx
   rules:
     - host: gloomhaven.tomschinelli.io
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: gloomhaven-backend
-                port:
-                  name: https
-  tls:
-    - hosts:
-        - "gloomhaven.tomschinelli.io"
-      secretName: letsencrypt
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: cuteapp
-  labels:
-    name: cuteapp
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod-cloudflare-dns"
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: cuteapp-prod.kappalul.com
-      http:
-        paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: cuteapp
+                name: gloomhaven-backend
                 port:
-                  number: 80
+                  number: 8080
   tls:
     - hosts:
-        - cuteapp-prod.kappalul.com
+        - gloomhaven.tomschinelli.io
       secretName: cuteapp-prod-tls
