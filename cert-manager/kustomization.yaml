@@ -11,3 +11,4 @@ helmCharts:
 resources:
   - namespace.yaml
   - cluster-issuer.yaml
+  - cloudflare-secret.yaml
