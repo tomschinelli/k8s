@@ -11,16 +11,17 @@ kubectl apply -f - <<EOF
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cert-manager
+  name: external-secrets
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: cloudflare
-  namespace: cert-manager
+  name: aws-credentials
+  namespace: external-secrets
 type: Opaque
 stringData:
-  token: "$CLOUDFLARE_TOKEN"
+  aws_access_key_id: "$AWS_ACCESS_KEY_ID"
+  aws_secret_access_key: "$AWS_SECRET_ACCESS_KEY"
 EOF
 ```
 
