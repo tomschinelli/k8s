@@ -1,12 +1,18 @@
 # k8s
 
+## Features
+- ArgoCD
+- cert-manager
+- external secret
+- example application
 
 ## Run minikube cluster 
+
 ```shell
 minikube start --addons ingress --nodes 1
 
 # set cloudflare token secret
-# Note: This will be replaced by external-secrets later
+# Note: This is the only secret needed. All other secretes are issued by external-secrets
 kubectl apply -f - <<EOF
 apiVersion: v1
 kind: Namespace
