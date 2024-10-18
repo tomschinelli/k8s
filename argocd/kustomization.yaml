@@ -22,5 +22,5 @@ patches:
         value: default
 resources:
   - namespace.yaml
-  - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.6.5
+  - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.12.6
   - ingress.yaml
